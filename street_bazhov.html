@@ -26,6 +26,12 @@ function init() {
         }, {
             preset: 'islands#greenDotIconWithCaption'
         }))
+	.add(new ymaps.Placemark([56.835889, 60.628547], {
+            balloonContent: 'улица Бажова, 137',
+            iconCaption: 'бывшое здание Народной школы'
+        }, {
+            preset: 'islands#greenDotIconWithCaption'
+        }))
         .add (new ymaps.Polyline([
             [56.849176, 60.622722],
             [56.827928, 60.631103]
