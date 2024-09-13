@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+.text-center {
+  text-align: center;
+}
+</style>
+<head>
+    <title>Улица Бажова</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=4b5d72e7-f176-4660-9cb1-093ddef1194f" type="text/javascript"></script>
+    <script>
+ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map("map", {
+            center: [56.840871, 60.625903],
+            zoom: 14
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+    myMap.geoObjects
+        .add(new ymaps.Placemark([56.841162, 60.626054], {
+            balloonContent: 'улица Бажова, 91',
+            iconCaption: 'Мемориальная доска писателю Павлу Петровичу Бажову'
+        }, {
+            preset: 'islands#greenDotIconWithCaption'
+        }))
+        .add (new ymaps.Polyline([
+            [56.849176, 60.622722],
+            [56.827928, 60.631103]
+        ], {
+            balloonContent: "Улица Бажова"
+        }, {
+            balloonCloseButton: false,
+            strokeColor: "#00BFFF",
+            strokeWidth: 4,
+            strokeOpacity: 1
+        }));
+}
+</script>
+	<style>
+        html, body, #map {
+            width: 100%; height: 100%; padding: 0; margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center">Улица Бажова</h2>
+    <div id="map"></div>
+</body>
+</html>
