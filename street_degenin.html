@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<style>
+.text-center {
+  text-align: center;
+}
+</style>
+<head>
+    <title>улица Вильгельма де Геннина</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=4b5d72e7-f176-4660-9cb1-093ddef1194f" type="text/javascript"></script>
+    <script>
+ymaps.ready(init);
+
+function init() {
+    var myMap = new ymaps.Map("map", {
+            center: [56.795628, 60.526098],
+            zoom: 14
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+    myMap.geoObjects
+        .add (new ymaps.Polyline([
+            [56.803397, 60.538020],
+            [56.799558, 60.533337],
+            [56.784542, 60.505597]
+        ], {
+            balloonContent: "улица Вильгельма де Геннина"
+        }, {
+            balloonCloseButton: false,
+            strokeColor: "#00BFFF",
+            strokeWidth: 4,
+            strokeOpacity: 1
+        }));
+}
+</script>
+	<style>
+        html, body, #map {
+            width: 100%; height: 100%; padding: 0; margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center">улица Вильгельма де Геннина</h2>
+    <div id="map"></div>
+</body>
+</html>
